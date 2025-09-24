@@ -175,7 +175,6 @@ t_ARROW = r'->'        # ->
 t_DOUBLECOLON = r'::'  # ::
 t_DOUBLEARROW = r'=>'  # =>
 
-# Regular expressions rules for a simple tokens 
 t_SEMICOLON = r';'
 t_LBRACKET = r'\['
 t_RBRACKET = r'\]'
@@ -200,7 +199,7 @@ t_OR = r'\|\|'
 t_DOT = r'\.'
 
 
-# Soporte para strings con comillas simples, dobles y escapes
+
 def t_STRING(t):
     r'("([^\\\n]|(\\.))*?"|\'([^\\\n]|(\\.))*?\')'
     return t
@@ -352,7 +351,7 @@ def t_BOOLEAN(t):
 
 # Soporte para números decimales, hexadecimales, binarios y octales
 def t_NUMBER(t):
-    r'0[xX][0-9a-fA-F]+|0[bB][01]+|0[0-7]+|(?<!function\u0020)\d+(\.\d+)?((E|e)(\-)?\d+(\.\d+)?)?'
+    r'\d+(\.\d+)?((E|e)(\-)?\d+(\.\d+)?)?'
     return t
 
 
